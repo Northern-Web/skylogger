@@ -1,0 +1,101 @@
+const mongoose  = require('mongoose');
+const timestamp = require('mongoose-timestamp');
+
+var JumpSchema = new mongoose.Schema({
+  number: {
+    type: Number,
+    required: true
+  },
+  date: {
+    type: Date,
+    required: true
+  },
+  aircraft: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  location: {
+    country: {
+        type: String,
+        trim: true
+    },
+    country_code: {
+        type: String,
+        trim: true
+    },
+    dropzone: {
+        type: String,
+        trim: true
+    }
+  },
+  stats: {
+    altitude: {
+        type: Number,
+        required: true
+    },
+    freefalltime: {
+        type: Number,
+        required: true
+    },
+    dicipline: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    isEmergencyProcedure: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    isTwin: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    isProgressionJump: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    isProgressionJumpApproved: {
+        type: Boolean
+    },
+    packjob: {
+        type: String,
+        requied: true,
+        default: "Unknown",
+        trim: true
+    },
+},
+    description: {
+        type: String,
+        required: true,
+        trim: true
+    },
+
+    attestant: {
+        name: {
+            type: String,
+            trim: true
+        },
+        licence: {
+            type: String,
+            trim: true
+        },
+        remark: {
+            type: String,
+            trim: true
+        }
+    },
+    owner: {
+        type: String,
+        required: true,
+        trim: true
+    }
+});
+
+JumpSchema.plugin(timestamp);
+
+var Jump = mongoose.model('Jump', JumpSchema);
+module.exports = { Jump };
