@@ -38,7 +38,7 @@ var JumpSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    dicipline: {
+    discipline: {
         type: String,
         required: true,
         trim: true
