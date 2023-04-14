@@ -79,7 +79,7 @@ var JumpSchema = new mongoose.Schema({
             type: String,
             trim: true
         },
-        licence: {
+        license: {
             type: String,
             trim: true
         },
