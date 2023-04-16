@@ -17,7 +17,7 @@ var CanopySchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  isActive {
+  isActive: {
     type: Boolean,
     required: true,
     default: true

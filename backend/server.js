@@ -24,9 +24,11 @@ app.use((req, res, next) => {
 
 // Router Requirements
 const authRoutes = require("./routes/auth.routes");
+const canopyRoutes = require("./routes/canopy.routes");
 
 // Router Uses
 app.use("/api/auth", authRoutes);
+app.use("/api/canopies", canopyRoutes);
 
 
 app.listen(process.env.PORT || 3000, () => {
